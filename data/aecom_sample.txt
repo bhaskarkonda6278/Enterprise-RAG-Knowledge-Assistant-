@@ -1,0 +1,22 @@
+AECOM AI Engineering Sample Knowledge Base
+
+AECOM's AI Engineering team works on AI-enabled platforms and infrastructure delivery.
+Enterprise AI systems can use retrieval-augmented generation to connect language models
+with controlled organisational knowledge. A RAG pipeline commonly ingests documents,
+splits them into smaller chunks, creates vector embeddings, stores those representations,
+retrieves relevant chunks for a user query, and supplies the retrieved context to an LLM.
+
+For production AI engineering, important concerns include data preparation, semantic
+retrieval, evaluation, validation, deployment, monitoring, security, and maintainability.
+Structured request and response validation can reduce malformed inputs and make API
+contracts explicit. FastAPI can expose an AI service as HTTP endpoints and automatically
+provide OpenAPI documentation.
+
+An enterprise assistant should avoid inventing information that is absent from its
+retrieved context. Retrieval quality can be assessed with a small evaluation set containing
+questions and expected relevant passages. A useful baseline is to measure whether the
+expected passage appears in the top-k retrieved results.
+
+The system in this project is intentionally small. It uses TF-IDF text representations,
+similarity-based retrieval, Pydantic models for API validation, FastAPI for serving,
+and an LLM provider for grounded response generation.
